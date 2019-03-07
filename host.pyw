@@ -1,6 +1,6 @@
 import thread
 from ChatFns import *
-
+import time
 
 
 #---------------------------------------------------#
@@ -97,6 +97,7 @@ def GetConnected():
     
     while 1:
         try:
+	    time.sleep(0.01)
             data = conn.recv(1024)
             LoadOtherEntry(ChatLog, data)
             if base.focus_get() == None:
