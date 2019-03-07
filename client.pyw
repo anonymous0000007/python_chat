@@ -1,5 +1,6 @@
 import thread
 from ChatFns import *
+import time
 
 #---------------------------------------------------#
 #---------INITIALIZE CONNECTION VARIABLES-----------#
@@ -89,6 +90,7 @@ def ReceiveData():
     
     while 1:
         try:
+	    time.sleep(0.01)
             data = s.recv(1024)
         except:
             LoadConnectionInfo(ChatLog, '\n [ Your partner has disconnected ] \n')
